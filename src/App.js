@@ -13,13 +13,13 @@ const menu = [
         link: '/posts',
         label: 'Posts'
     },
-]
+];
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Header items={menu}/>
+                <Header title="lesson about props" items={menu}/>
                 <Dropdown/>
             </div>
         );
