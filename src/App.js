@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Dropdown from './Dropdown/Dropdown'
 import Header from "./Header/Header";
+import RegistrationForm from "./Registration/RegistrationForm";
 
 const menu = [
     {
@@ -21,6 +22,8 @@ class App extends Component {
             <div>
                 <Header title="lesson about props" items={menu}/>
                 <Dropdown/>
+                <hr/>
+                <RegistrationForm/>
             </div>
         );
     }
