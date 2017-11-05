@@ -11,15 +11,36 @@ import {Router, Route, hashHistory} from 'react-router';
 import thunk from 'redux-thunk';
 import reducer from '';*/
 
-function playlist(state = []) {
-    return state
+function playlist(state = [], action) {
+    if (action.type === 'ADD_TRACK') {
+        return [
+            ...state,
+            action.payload
+        ]
+    }
 }
 
 const store = createStore(playlist);
-console.log(store.getState());
+
+const list = document.querySelectorAll('.list')[0];
+const trackInput = document.querySelectorAll('.trackInput')[0];
+const addTrackBtn = document.querySelectorAll('.addTrack')[0];
 
 store.subscribe(() => {
-    console.log(store.getState())
+    console.log(store.getState());
+    list.innerHTML = '';
+    trackInput.value = '';
+    store.getState().forEach((track) => {
+        const li = document.createElement('li');
+        li.textContent = track;
+        list.appendChild(li);
+    })
+});
+
+addTrackBtn.addEventListener('click', () => {
+    const trackName = trackInput.value;
+    console.log(trackName);
+    store.dispatch({type: 'ADD_TRACK', payload: trackName})
 });
 
 /*const store=createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
