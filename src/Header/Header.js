@@ -19,7 +19,7 @@ class Header extends Component {
 
 Header.propTypes = {
     items: PropTypes.array.isRequired,
-    submit: PropTypes.func.isRequired,
+    submit: PropTypes.func,
     title: PropTypes.string.isRequired,
     type: PropTypes.oneOf(['news', 'photos']),
     user: PropTypes.shape({
