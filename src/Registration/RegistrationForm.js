@@ -5,7 +5,7 @@ class RegistrationForm extends Component {
         super(props);
         this.state = {
             email: ''
-        },
+        };
             this.handleEmailChange = this.handleEmailChange.bind(this);
             this.handleSubmit = this.handleSubmit.bind(this);
     };
